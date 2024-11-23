@@ -1,0 +1,28 @@
+.landing_headings {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+    background-color: green;
+    align-items: center;
+  }
+  
+  .authentication-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  
+  .navigation-link {
+    text-decoration: none;
+    color: inherit;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+    transition: all 0.3s;
+    padding: 1rem;
+  }
+  .navigation-link:hover {
+    background-color: lightskyblue;
+    color: yellow;
+  }

@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
+
+* {
+  font-family: "Playfair Display", serif;
+  margin: 0;
+}
+
+.lagingpage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/homepg.jpg) center/cover no-repeat;
+}
+
+.landingpage-discription {
+  padding: 20px;
+}
+
+.home-to-signup:hover {
+  text-decoration: underline;
+  color: brown;
+}
+
+.welcome-header {
+  text-transform: capitalize;
+  font-size: 60px;
+  color: grey;
+  font-family: "Teko", sans-serif;
+}
+
+.welcoming-description {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-family: "Barlow", sans-serif;
+  font-style: italic;
+}
+
+.welcoming-contrals {
+  display: flex;
+  gap: 15px;
+}
+
+.getstarted-link,
+.lets-link {
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: capitalize;
+}
+
+.getstarted-link:hover,
+.lets-link:hover {
+  background-color: #218838;
+}
+
+.getstarted-link:focus,
+.lets-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 180, 97, 0.5);
+}
