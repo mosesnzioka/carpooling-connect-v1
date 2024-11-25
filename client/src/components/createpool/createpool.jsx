@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
+import { useNavigate } from "react-router-dom";
 import "./createpool.css";
 
 function CreatePoolForm() {
@@ -13,7 +14,7 @@ function CreatePoolForm() {
     seatsAvailable: "",
     peakPoint: "",
   });
-
+  const navigate = useNavigate();
   const { mutate, isLoading, isError, error } = useMutation({
     mutationFn: async (pool) => {
       const response = await fetch(`http://localhost:4000/pool`, {
@@ -28,10 +29,12 @@ function CreatePoolForm() {
       if (!response.ok) {
         throw new Error("Failed to create pool. Please try again.");
       }
-      return response.json();
+      const data = await response.json();
+      return data;
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       alert("Pool created successfully!");
+      navigate(`/pool/${data.id}`);
       setFormData({
         location: "",
         day: "",
@@ -56,10 +59,11 @@ function CreatePoolForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
     const updatedFormData = {
       ...formData,
-      departureTime: new Date(`1970-01-01T${formData.departureTime}:00Z`).toISOString(),
+      departureTime: new Date(
+        `1970-01-01T${formData.departureTime}:00Z`,
+      ).toISOString(),
     };
 
     mutate(updatedFormData);
@@ -164,7 +168,11 @@ function CreatePoolForm() {
             disabled={isLoading}
           />
         </div>
-        <button type="submit" className="create-pool-button" disabled={isLoading}>
+        <button
+          type="submit"
+          className="create-pool-button"
+          disabled={isLoading}
+        >
           {isLoading ? "Please wait..." : "Create Pool"}
         </button>
         {isError && <p className="error-message">{error.message}</p>}

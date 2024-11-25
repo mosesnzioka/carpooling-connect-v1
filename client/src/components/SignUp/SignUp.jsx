@@ -145,11 +145,7 @@ function SignupForm() {
             />
           </label>
         </div>
-        <button
-          className="signup-button"
-          type="submit"
-          disabled={isLoading}
-        >
+        <button className="signup-button" type="submit" disabled={isLoading}>
           {isLoading ? "Loading, please wait..." : "Submit"}
         </button>
 

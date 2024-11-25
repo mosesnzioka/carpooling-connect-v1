@@ -23,7 +23,6 @@ function Allpools() {
     fetchPools();
   }, []);
 
-  
   const handleViewPool = (poolId) => {
     navigate(`/pools/${poolId}`);
   };
@@ -36,9 +35,15 @@ function Allpools() {
           pools.map((pool) => (
             <div key={pool.id} className="pool-card">
               <h2>{pool.location}</h2>
-              <p><strong>Distance:</strong> {pool.distance} km</p>
-              <p><strong>Cost:</strong> ${pool.cost}</p>
-              <p><strong>Departure Time:</strong> {pool.departureTime}</p>
+              <p>
+                <strong>Distance:</strong> {pool.distance} km
+              </p>
+              <p>
+                <strong>Cost:</strong> ${pool.cost}
+              </p>
+              <p>
+                <strong>Departure Time:</strong> {pool.departureTime}
+              </p>
               <button
                 className="view-button"
                 onClick={() => handleViewPool(pool.id)}

@@ -1,5 +1,3 @@
-
-
 import "./homeheader.css";
 
 function LandingHeaderNavs() {
