@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 import "./fullpool.css";
 
 function Fullpool() {
+  
   const { id } = useParams();
-  console.log("Pool ID:", id);
 
   const { data, error, isError, isLoading } = useQuery(
     `pool-${id}`,
@@ -16,7 +16,6 @@ function Fullpool() {
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.error("Error response:", errorText);
         throw new Error("Failed to fetch the pool data");
       }
 

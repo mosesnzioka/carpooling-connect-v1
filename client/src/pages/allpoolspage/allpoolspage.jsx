@@ -1,9 +1,11 @@
 import Allpools from "../../components/allpools/allpools";
-function Allpools() {
+import Mainhomeheader from "../../components/mainHomeHeader/mainhomeheader";
+function Allpoolspage() {
   return (
     <div>
+      <Mainhomeheader/>
       <Allpools />
     </div>
   );
 }
-export default Allpools;
+export default Allpoolspage;
