@@ -51,9 +51,10 @@ function Allpools() {
         {pools.length > 0 ? (
           pools.map((pool) => (
             <div key={pool.id} className="pool-card">
-              <h2 className="pool-location">{pool.location}</h2>
+              <h2 className="pool-location">
+                <strong>Location:</strong> {pool.location}</h2>
               <p className="pool-info">
-                <strong>Distance:</strong> {pool.distance} km
+                <strong>Destination:</strong> {pool.destination} 
               </p>
               <p className="pool-info">
                 <strong>Cost:</strong> ${pool.cost}

@@ -1,4 +1,4 @@
-/* Homepage Styles */
+
 .homepage {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,7 +7,7 @@
     color: #333;
   }
   
-  /* Hero Section */
+  
   .hero {
     background:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -51,7 +51,7 @@
     background-color: #0056b3;
   }
   
-  /* About Us Section */
+ 
   .about {
     padding: 50px 20px;
     text-align: center;

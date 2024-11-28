@@ -6,6 +6,8 @@ import SignUpPage from "./pages/SignUp/SignUp";
 import Fullpool from "./components/fullpool/fullpool";
 import MainHomePage from "./pages/mainHomePage/mainhomepage";
 import Allpoolspage from "./pages/allpoolspage/allpoolspage";
+import DriverRequests from "./components/Requests/requests";
+import { Toaster } from "sonner";
 
 import Createpoolpage from "./pages/createpoolpage/createpoolpage";
 
@@ -17,6 +19,7 @@ function App() {
   return (
     <QueryClientProvider client={client}>
       <BrowserRouter>
+      <Toaster position="bottom-center" richColors />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<MainHomePage/>}/>
@@ -26,6 +29,7 @@ function App() {
           <Route path="/allpools" element={<Allpoolspage/>} />
           <Route path="/pools" element={<MainHomePage />} />
           <Route path="/pool/:id" element={<Fullpool />} />
+          <Route path="/requests" element= {<DriverRequests/>} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

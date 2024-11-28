@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import{toast} from "sonner"
 import "./logout.css";
 
 function Logout() {
@@ -14,7 +15,7 @@ function Logout() {
 
       if (response.ok) {
         localStorage.removeItem('authToken');
-        alert('Logout successful!');
+        toast.success("logedout succesifuly");
         navigate('/signin');
       } else {
         const error = await response.json();
@@ -22,8 +23,7 @@ function Logout() {
         alert(`Logout failed: ${error.message}`);
       }
     } catch (error) {
-      console.error('Error during logout:', error);
-      alert('Logout failed: Unauthorized');
+      toast.error('Logout failed: Unauthorized');
     }
   };
 

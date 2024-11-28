@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
+import { toast } from "sonner";
 import "./signIn.css";
 import useUserStore from "../store/userstore";
 
@@ -33,11 +34,11 @@ function SignInUser() {
       setUser(user);
       setEmail("");
       setPassword("");
-      alert("loged in successfully!");
+      toast.success("Logedin successful!");
       navigate("/pools");
     },
     onError: (error) => {
-      alert(`Login failed: ${error.message}`);
+      toast.error(`Login failed: ${error.message}`);
     },
   });
 

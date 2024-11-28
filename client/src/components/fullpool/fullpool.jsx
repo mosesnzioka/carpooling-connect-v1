@@ -1,11 +1,12 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import {toast} from "sonner"
 import "./fullpool.css";
 
 function Fullpool() {
-  
   const { id } = useParams();
+  
 
   const { data, error, isError, isLoading } = useQuery(
     `pool-${id}`,
@@ -44,6 +45,57 @@ function Fullpool() {
     }).format(date);
   }
 
+
+
+  const handleJoinPool = async () => {
+    try {
+      
+      const response = await fetch("http://localhost:4000/current_user", {
+        credentials: "include",
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to fetch current user");
+      }
+  
+      const currentUser = await response.json();
+  
+      const notificationData = {
+        senderId: currentUser.id,
+        receiverId: data.user.id,
+        poolId: data.id,
+        message: `Passenger has requested to join your pool from ${data.location} to ${data.destination}.`,
+      };
+
+      if (notificationData.senderId === notificationData.receiverId) {
+        alert("You cannot join your own pool!");
+        return;
+      }
+  
+      const notificationResponse = await fetch("http://localhost:4000/notifications", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(notificationData),
+        credentials: "include",
+      });
+  
+      const responseData = await notificationResponse.json();
+  
+      if (notificationResponse.ok) {
+        toast.success("Request sent successfully!");
+      } else {
+        console.error("Failed to send notification:", responseData);
+        toast.error("Failed to send request.");
+      }
+    } catch (error) {
+      toast.error("An error occurred.");
+    }
+  };
+  
+  
+
   return (
     <div className="card">
       <div className="card-item">
@@ -71,6 +123,9 @@ function Fullpool() {
       <div className="card-item">
         Cost: <span className="value">{data.cost}</span>
       </div>
+      <button className="join-pool-btn" onClick={handleJoinPool}>
+        Join Pool
+      </button>
     </div>
   );
 }

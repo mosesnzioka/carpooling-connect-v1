@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
+import {toast} from "sonner"
 import "./createpool.css";
 
 function CreatePoolForm() {
@@ -33,7 +34,7 @@ function CreatePoolForm() {
       return data;
     },
     onSuccess: (data) => {
-      alert("Pool created successfully!");
+      toast.success("Pool created successfully!");
       navigate(`/pool/${data.id}`);
       setFormData({
         location: "",
@@ -47,7 +48,7 @@ function CreatePoolForm() {
       });
     },
     onError: () => {
-      alert("Error occurred while creating pool. Please try again.");
+      toast.error("Error occurred while creating pool. Please try again.");
     },
   });
 

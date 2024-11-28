@@ -1,4 +1,4 @@
-/* Card Container */
+
 .card {
   max-width: 400px;
   margin: 20px auto;
@@ -9,7 +9,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* Card Items */
+
 .card-item {
   margin: 10px 0;
   color: #333333;
@@ -17,14 +17,33 @@
   font-weight: 500;
 }
 
-/* Highlight Key Information */
+
 .card-item .value {
   font-weight: bold;
-  color: #007bff; /* Optional: Change to your theme's primary color */
+  color: #007bff;
 }
 
-/* Add spacing between items */
+
 .card-item:not(:last-child) {
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 8px;
+}
+
+.join-pool-btn{
+  background-color: rgb(64, 64, 247);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+}
+
+.join-pool-btn:hover {
+  background-color: #4193f8;
 }

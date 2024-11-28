@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
+import {toast} from "sonner"
 import "./SignUp.css";
 
 function SignupForm() {
@@ -30,7 +31,7 @@ function SignupForm() {
       return await response.json();
     },
     onError: (error) => {
-      alert(error.message);
+      toast.error(error.message);
     },
     onSuccess: (data) => {
       setFirstName("");
@@ -39,7 +40,7 @@ function SignupForm() {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-      alert("User registered successfully!");
+      toast.success("User registered successfully!");
       navigate("/signin");
     },
   });
@@ -48,7 +49,7 @@ function SignupForm() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      toast.error("Passwords do not match!");
       return;
     }
 
