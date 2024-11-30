@@ -6,10 +6,11 @@ import SignUpPage from "./pages/SignUp/SignUp";
 import Fullpool from "./components/fullpool/fullpool";
 import MainHomePage from "./pages/mainHomePage/mainhomepage";
 import Allpoolspage from "./pages/allpoolspage/allpoolspage";
-import DriverRequests from "./components/Requests/requests";
+import Notifications from "./pages/requests/reguestsPage";
 import { Toaster } from "sonner";
 
 import Createpoolpage from "./pages/createpoolpage/createpoolpage";
+import MyProfile from "./pages/my-profile-page/myProfilePage";
 
 import "./App.css";
 
@@ -19,17 +20,18 @@ function App() {
   return (
     <QueryClientProvider client={client}>
       <BrowserRouter>
-      <Toaster position="bottom-center" richColors />
+        <Toaster position="bottom-center" richColors />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<MainHomePage/>}/>
+          <Route path="/home" element={<MainHomePage />} />
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/createpool" element= {<Createpoolpage/>} />
-          <Route path="/allpools" element={<Allpoolspage/>} />
+          <Route path="/createpool" element={<Createpoolpage />} />
+          <Route path="/allpools" element={<Allpoolspage />} />
           <Route path="/pools" element={<MainHomePage />} />
           <Route path="/pool/:id" element={<Fullpool />} />
-          <Route path="/requests" element= {<DriverRequests/>} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="myprofile" element={<MyProfile />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

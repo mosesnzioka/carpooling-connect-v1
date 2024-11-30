@@ -1,6 +1,6 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import{toast} from "sonner"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import "./logout.css";
 
 function Logout() {
@@ -8,22 +8,22 @@ function Logout() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://localhost:4000/logout', {
-        method: 'POST',
-        credentials: 'include',
+      const response = await fetch("http://localhost:4000/logout", {
+        method: "POST",
+        credentials: "include",
       });
 
       if (response.ok) {
-        localStorage.removeItem('authToken');
+        localStorage.removeItem("authToken");
         toast.success("logedout succesifuly");
-        navigate('/signin');
+        navigate("/signin");
       } else {
         const error = await response.json();
-        console.error('Logout failed:', error.message);
+        console.error("Logout failed:", error.message);
         alert(`Logout failed: ${error.message}`);
       }
     } catch (error) {
-      toast.error('Logout failed: Unauthorized');
+      toast.error("Logout failed: Unauthorized");
     }
   };
 
@@ -35,4 +35,3 @@ function Logout() {
 }
 
 export default Logout;
-

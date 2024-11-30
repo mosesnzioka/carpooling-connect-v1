@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
-import {toast} from "sonner"
+import { toast } from "sonner";
 import "./SignUp.css";
 
 function SignupForm() {

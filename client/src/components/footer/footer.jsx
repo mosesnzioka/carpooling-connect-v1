@@ -1,14 +1,25 @@
+import React from "react";
 import "./footer.css";
+
 function Footer() {
   return (
-    <div className="footer-container">
-      <footer>
-        <p>Author: moses nzioka</p>
-        <p>
-          <a href="http/github.mosesnzioka.com">mosesnzioka@gmail.com</a>
-        </p>
-      </footer>
-    </div>
+    <footer className="footer">
+      <nav className="footer-nav">
+        <a href="/" className="footer-link">
+          Home
+        </a>
+        <a href="/available-pools" className="footer-link">
+          Available Pools
+        </a>
+        <a href="/notifications" className="footer-link">
+          Notifications
+        </a>
+      </nav>
+      <div className="footer-copyright">
+        &copy; {new Date().getFullYear()} Carpool Connect. All rights reserved.
+      </div>
+    </footer>
   );
 }
+
 export default Footer;

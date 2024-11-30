@@ -3,7 +3,7 @@ import Mainhomeheader from "../../components/mainHomeHeader/mainhomeheader";
 function Createpoolpage() {
   return (
     <div>
-      <Mainhomeheader/>
+      <Mainhomeheader />
       <CreatePoolForm />
     </div>
   );

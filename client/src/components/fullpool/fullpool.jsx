@@ -1,12 +1,11 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import {toast} from "sonner"
+import { toast } from "sonner";
 import "./fullpool.css";
 
 function Fullpool() {
   const { id } = useParams();
-  
 
   const { data, error, isError, isLoading } = useQuery(
     `pool-${id}`,
@@ -45,21 +44,18 @@ function Fullpool() {
     }).format(date);
   }
 
-
-
   const handleJoinPool = async () => {
     try {
-      
       const response = await fetch("http://localhost:4000/current_user", {
         credentials: "include",
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to fetch current user");
       }
-  
+
       const currentUser = await response.json();
-  
+
       const notificationData = {
         senderId: currentUser.id,
         receiverId: data.user.id,
@@ -71,18 +67,21 @@ function Fullpool() {
         alert("You cannot join your own pool!");
         return;
       }
-  
-      const notificationResponse = await fetch("http://localhost:4000/notifications", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+
+      const notificationResponse = await fetch(
+        "http://localhost:4000/notifications",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(notificationData),
+          credentials: "include",
         },
-        body: JSON.stringify(notificationData),
-        credentials: "include",
-      });
-  
+      );
+
       const responseData = await notificationResponse.json();
-  
+
       if (notificationResponse.ok) {
         toast.success("Request sent successfully!");
       } else {
@@ -93,8 +92,6 @@ function Fullpool() {
       toast.error("An error occurred.");
     }
   };
-  
-  
 
   return (
     <div className="card">

@@ -7,11 +7,12 @@
 }
 
 .lagingpage {
-  min-height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  height: 80vh;
 
   background:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -19,56 +20,67 @@
 }
 
 .landingpage-discription {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.welcoming-user {
   padding: 20px;
 }
 
-.home-to-signup:hover {
-  text-decoration: underline;
-  color: brown;
-}
-
 .welcome-header {
-  text-transform: capitalize;
-  font-size: 60px;
-  color: grey;
-  font-family: "Teko", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #4caf50;
 }
 
 .welcoming-description {
-  font-size: 40px;
-  color: #fff;
+  font-size: 2rem;
+  line-height: 1.6;
   margin-bottom: 20px;
-  font-family: "Barlow", sans-serif;
-  font-style: italic;
+  color: white;
 }
 
 .welcoming-contrals {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .getstarted-link,
 .lets-link {
-  background-color: #28a745;
-  color: #ffffff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-size: 20px;
-  text-decoration: none;
   display: inline-block;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-transform: capitalize;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #4caf50;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .getstarted-link:hover,
 .lets-link:hover {
-  background-color: #218838;
+  background-color: #81c784;
+  transform: scale(1.05);
 }
 
-.getstarted-link:focus,
-.lets-link:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(72, 180, 97, 0.5);
+@media (max-width: 768px) {
+  .welcome-header {
+    font-size: 1.5rem;
+  }
+
+  .welcoming-description {
+    font-size: 0.9rem;
+  }
+
+  .getstarted-link,
+  .lets-link {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
 }

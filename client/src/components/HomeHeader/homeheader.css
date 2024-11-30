@@ -6,6 +6,26 @@
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .landing_headings {
+    flex-direction: column;
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 30.94em) {
+  .landing_headings ul {
+    flex-direction: column;
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .authentication-links {
   list-style: none;
   display: flex;

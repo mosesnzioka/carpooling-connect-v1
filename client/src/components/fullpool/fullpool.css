@@ -1,4 +1,3 @@
-
 .card {
   max-width: 400px;
   margin: 20px auto;
@@ -9,7 +8,6 @@
   font-family: Arial, sans-serif;
 }
 
-
 .card-item {
   margin: 10px 0;
   color: #333333;
@@ -17,19 +15,17 @@
   font-weight: 500;
 }
 
-
 .card-item .value {
   font-weight: bold;
   color: #007bff;
 }
-
 
 .card-item:not(:last-child) {
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: 8px;
 }
 
-.join-pool-btn{
+.join-pool-btn {
   background-color: rgb(64, 64, 247);
   color: white;
   border: none;

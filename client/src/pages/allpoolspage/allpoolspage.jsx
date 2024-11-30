@@ -3,7 +3,7 @@ import Mainhomeheader from "../../components/mainHomeHeader/mainhomeheader";
 function Allpoolspage() {
   return (
     <div>
-      <Mainhomeheader/>
+      <Mainhomeheader />
       <Allpools />
     </div>
   );

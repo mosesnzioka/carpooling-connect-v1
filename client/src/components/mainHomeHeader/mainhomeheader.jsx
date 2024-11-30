@@ -1,46 +1,42 @@
-import "./mainhomeheader.css"
+import "./mainhomeheader.css";
+import { Link } from "react-router-dom";
 import Logout from "../logout/logout";
 
 function Mainhomeheader() {
   return (
     <div className="home_headings">
       <h2>Carpooling Connect</h2>
-     
+
       <nav>
         <ul className="authentication-links">
-        <li className="navigation-items">
-            <a href="/home" className="navigation-link">
+          <li className="navigation-items">
+            <Link to="/home" className="navigation-link">
               Home
-            </a>
+            </Link>
           </li>
           <li className="navigation-items">
-            <a href="/allpools" className="navigation-link">
+            <Link to="/allpools" className="navigation-link">
               available pools
-            </a>
+            </Link>
           </li>
           <li className="navigation-items">
-            <a href="/createpool" className="navigation-link">
+            <Link to="/createpool" className="navigation-link">
               Create Pool
-            </a>
+            </Link>
           </li>
           <li className="navigation-items">
-            <a href="#" className="navigation-link">
+            <Link to="/myprofile" className="navigation-link">
               my profile
-            </a>
+            </Link>
           </li>
           <li className="navigation-items">
-            <a href="requests" className="navigation-link">
-              Requests
-            </a>
+            <Link to="/notifications" className="navigation-link">
+              Notifications
+            </Link>
           </li>
-
-           
         </ul>
       </nav>
-      <Logout/>
-
-      
-      
+      <Logout />
     </div>
   );
 }

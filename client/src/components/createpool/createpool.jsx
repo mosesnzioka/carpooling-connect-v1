@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
-import {toast} from "sonner"
+import { toast } from "sonner";
 import "./createpool.css";
 
 function CreatePoolForm() {

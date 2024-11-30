@@ -7,16 +7,15 @@ function Allpools() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  
   useEffect(() => {
     const fetchPools = async () => {
       try {
         const response = await fetch("http://localhost:4000/pools", {
           method: "GET",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
-          credentials: 'include'
+          credentials: "include",
         });
         if (!response.ok) {
           throw new Error("Failed to fetch pools");
@@ -52,15 +51,17 @@ function Allpools() {
           pools.map((pool) => (
             <div key={pool.id} className="pool-card">
               <h2 className="pool-location">
-                <strong>Location:</strong> {pool.location}</h2>
+                <strong>Location:</strong> {pool.location}
+              </h2>
               <p className="pool-info">
-                <strong>Destination:</strong> {pool.destination} 
+                <strong>Destination:</strong> {pool.destination}
               </p>
               <p className="pool-info">
                 <strong>Cost:</strong> ${pool.cost}
               </p>
               <p className="pool-info">
-                <strong>Departure Time:</strong> {formatTime(pool.departureTime)}
+                <strong>Departure Time:</strong>{" "}
+                {formatTime(pool.departureTime)}
               </p>
               <button
                 className="view-button"
