@@ -30,6 +30,11 @@ function Mainhomeheader() {
             </Link>
           </li>
           <li className="navigation-items">
+            <Link to="/mypools" className="navigation-link">
+              my pools
+            </Link>
+          </li>
+          <li className="navigation-items">
             <Link to="/notifications" className="navigation-link">
               Notifications
             </Link>

@@ -26,7 +26,7 @@ function PersonalInformation() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:4000/user/profile", {
+      const response = await fetch("http://localhost:4000/user", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userInfo),
@@ -34,6 +34,8 @@ function PersonalInformation() {
       });
 
       if (response.ok) {
+        const updatedUser = await response.json();
+        useUserStore.setState({ user: updatedUser });
         toast.success("Profile updated successfully!");
       } else {
         throw new Error("Failed to update profile.");
@@ -120,3 +122,7 @@ function PersonalInformation() {
 }
 
 export default PersonalInformation;
+
+
+
+

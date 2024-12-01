@@ -36,6 +36,7 @@ function SignInUser() {
       setPassword("");
       toast.success("Logedin successful!");
       navigate("/pools");
+
     },
     onError: (error) => {
       toast.error(`Login failed: ${error.message}`);
@@ -46,6 +47,7 @@ function SignInUser() {
     event.preventDefault();
     mutate({ email, password });
   };
+
 
   return (
     <form onSubmit={handleSubmit}>

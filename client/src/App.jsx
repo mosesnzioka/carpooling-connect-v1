@@ -11,6 +11,7 @@ import { Toaster } from "sonner";
 
 import Createpoolpage from "./pages/createpoolpage/createpoolpage";
 import MyProfile from "./pages/my-profile-page/myProfilePage";
+import MyPoolsPage from "./pages/mypoolspage/mypoolspage";
 
 import "./App.css";
 
@@ -31,7 +32,8 @@ function App() {
           <Route path="/pools" element={<MainHomePage />} />
           <Route path="/pool/:id" element={<Fullpool />} />
           <Route path="/notifications" element={<Notifications />} />
-          <Route path="myprofile" element={<MyProfile />} />
+          <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/mypools" element={<MyPoolsPage/>} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

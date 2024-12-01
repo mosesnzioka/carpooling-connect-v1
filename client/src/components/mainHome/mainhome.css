@@ -29,6 +29,17 @@
   }
 }
 
+@media (max-width: 769px) {
+  .homepage {
+    flex-direction: column;
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+}
+
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
@@ -52,6 +63,7 @@
   border-radius: 10px;
   margin-top: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .about-title {

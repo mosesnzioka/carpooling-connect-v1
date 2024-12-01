@@ -1,0 +1,67 @@
+/* Container for the form */
+.edit-pool-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  /* Header */
+  .edit-pool-header {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* Labels and inputs */
+  .form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Actions */
+  .form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-save-button {
+    background-color: #4caf50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .form-save-button:hover {
+    background-color: #45a049;
+  }
+  
+  .form-cancel-button {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .form-cancel-button:hover {
+    background-color: #d32f2f;
+  }
+  

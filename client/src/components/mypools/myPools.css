@@ -1,0 +1,108 @@
+
+.my-pools-container {
+  padding: 20px;
+}
+
+.my-pools-header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.my-pools-list {
+  list-style: none;
+  padding: 0;
+}
+
+.my-pool-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+
+.pool-info {
+  margin: 5px 0;
+}
+
+
+.pool-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.pool-edit-button,
+.pool-delete-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pool-edit-button {
+  background-color: #4caf50; 
+  color: white;
+}
+
+.pool-edit-button:hover {
+  background-color: #45a049;
+}
+
+.pool-delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.pool-delete-button:hover {
+  background-color: #d32f2f;
+}
+
+
+.update-pool-form {
+  margin-top: 20px;
+}
+
+.update-pool-header {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.form-update-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.form-update-button:hover {
+  background-color: #1976d2;
+}
+
+.form-cancel-button {
+  background-color: #9e9e9e;
+  color: white;
+}
+
+.form-cancel-button:hover {
+  background-color: #757575;
+}
